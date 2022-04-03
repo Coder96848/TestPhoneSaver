@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TestPhoneSaver</string>
+    <string name="warning">Внимание</string>
+    <string name="remove_question">Вы точно хотите удалить контакт?</string>
+    <string name="positive_answer">Да</string>
+    <string name="negative_answer">Нет</string>
+    <string name="ok">Ок</string>
+    <string name="return_anyway">Все равно вернуться</string>
+    <string name="wrong_phone_number">Неправильно введен номер</string>
+    <string name="empty_fields">Все поля должны быть заполнены</string>
+    <string name="same_number">Такой номер уже есть</string>
+</resources>
