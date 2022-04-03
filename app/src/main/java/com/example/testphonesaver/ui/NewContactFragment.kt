@@ -1,4 +1,4 @@
-package com.example.testphonesaver.ui.new_contact
+package com.example.testphonesaver.ui
 
 import android.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
@@ -14,7 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.testphonesaver.MainActivity
 import com.example.testphonesaver.R
 import com.example.testphonesaver.model.Contact
-import com.example.testphonesaver.ui.contact_list.ContactViewModel
+import com.example.testphonesaver.ui.view_model.ViewModel
 import com.example.testphonesaver.util.ValidateEnum
 
 class NewContactFragment : Fragment() {
@@ -23,7 +23,7 @@ class NewContactFragment : Fragment() {
         fun newInstance() = NewContactFragment()
     }
 
-    private lateinit var viewModel: ContactViewModel
+    private lateinit var viewModel: ViewModel
     private lateinit var editContactName: EditText
     private lateinit var editContactPhone: EditText
     private lateinit var saveButton: Button
@@ -53,7 +53,7 @@ class NewContactFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider((activity as MainActivity)).get(ContactViewModel::class.java)
+        viewModel = ViewModelProvider((activity as MainActivity)).get(ViewModel::class.java)
 
         warningObserver = Observer<ValidateEnum> {
 

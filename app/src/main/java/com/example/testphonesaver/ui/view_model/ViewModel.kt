@@ -1,4 +1,4 @@
-package com.example.testphonesaver.ui.contact_list
+package com.example.testphonesaver.ui.view_model
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -7,7 +7,7 @@ import com.example.testphonesaver.model.Contact
 import com.example.testphonesaver.util.ContactPhoneValidator
 import com.example.testphonesaver.util.ValidateEnum
 
-class ContactViewModel(
+class ViewModel(
     application: Application,
     private val validator: ContactPhoneValidator
 ) : AndroidViewModel(application) {

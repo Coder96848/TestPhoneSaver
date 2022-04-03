@@ -1,4 +1,4 @@
-package com.example.testphonesaver.ui.contact_list
+package com.example.testphonesaver.ui
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.testphonesaver.MainActivity
 import com.example.testphonesaver.R
 import com.example.testphonesaver.model.Contact
+import com.example.testphonesaver.ui.view_model.ViewModel
+import com.example.testphonesaver.ui.view_model.ViewModelFactory
 import com.example.testphonesaver.util.ContactListAdapter
 import com.example.testphonesaver.util.ContactPhoneValidator
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -24,7 +26,7 @@ class ContactListFragment : Fragment() {
         fun newInstance() = ContactListFragment()
     }
 
-    private lateinit var viewModel: ContactViewModel
+    private lateinit var viewModel: ViewModel
     private lateinit var contactListRecyclerView: RecyclerView
     private lateinit var addContactButton: FloatingActionButton
     private lateinit var contactListObserver: Observer<MutableList<Contact>>
@@ -84,8 +86,8 @@ class ContactListFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(
             activity as MainActivity,
-            ContactViewModelFactory(activity?.application!!, validator)
-        ).get(ContactViewModel::class.java)
+            ViewModelFactory(activity?.application!!, validator)
+        ).get(ViewModel::class.java)
 
         contactListObserver = Observer<MutableList<Contact>> {
             adapter.changeItems(it)

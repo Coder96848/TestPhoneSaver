@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/contactListFragment"
-        android:name="com.example.testphonesaver.ui.contact_list.ContactListFragment"
+        android:name="com.example.testphonesaver.ui.ContactListFragment"
         android:label="contact_list_fragment"
         tools:layout="@layout/contact_list_fragment" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/newContactFragment"
-        android:name="com.example.testphonesaver.ui.new_contact.NewContactFragment"
+        android:name="com.example.testphonesaver.ui.NewContactFragment"
         android:label="new_contact_fragment"
         tools:layout="@layout/new_contact_fragment" >
         <action
