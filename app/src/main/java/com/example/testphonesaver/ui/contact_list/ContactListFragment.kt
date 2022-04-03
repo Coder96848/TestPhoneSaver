@@ -8,14 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.testphonesaver.MainActivity
 import com.example.testphonesaver.R
 import com.example.testphonesaver.model.Contact
-import com.example.testphonesaver.util.CommonConsts
 import com.example.testphonesaver.util.ContactListAdapter
 import com.example.testphonesaver.util.ContactPhoneValidator
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -78,8 +76,6 @@ class ContactListFragment : Fragment() {
         addContactButton.setOnClickListener {
             findNavController().navigate(R.id.action_contactListFragment_to_newContactFragment)
         }
-
-
 
         return view
     }

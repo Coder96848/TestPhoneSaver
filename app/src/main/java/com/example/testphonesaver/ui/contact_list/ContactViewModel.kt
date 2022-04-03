@@ -18,14 +18,15 @@ class ContactViewModel(
 
     init {
         contactList.value = mutableListOf()
-        warning.value = ValidateEnum.VALIDATED
+        warning.value = ValidateEnum.UNDEFINE
     }
 
     fun addContact(newContact: Contact) {
         savedContact.value = newContact
         val contacts = contactList.value ?: mutableListOf()
-        warning.value = validator.validate(newContact, contacts)
-        if (validator.validate(newContact, contacts) == ValidateEnum.VALIDATED) {
+        val validated = validator.validate(newContact, contacts)
+        warning.value = validated
+        if (validated == ValidateEnum.VALIDATED) {
             contacts.add(newContact)
             contactList.value = contacts
         }

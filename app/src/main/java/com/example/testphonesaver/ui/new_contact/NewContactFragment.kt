@@ -15,7 +15,6 @@ import com.example.testphonesaver.MainActivity
 import com.example.testphonesaver.R
 import com.example.testphonesaver.model.Contact
 import com.example.testphonesaver.ui.contact_list.ContactViewModel
-import com.example.testphonesaver.util.CommonConsts
 import com.example.testphonesaver.util.ValidateEnum
 
 class NewContactFragment : Fragment() {
@@ -70,18 +69,25 @@ class NewContactFragment : Fragment() {
             when (viewModel.warning.value) {
                 ValidateEnum.VALIDATED -> {
                     findNavController().navigate(R.id.action_newContactFragment_to_contactListFragment)
+                    viewModel.warning.value = ValidateEnum.UNDEFINE
                 }
                 ValidateEnum.WRONG_PHONE -> {
                     builder.setMessage(getString(R.string.wrong_phone_number))
                     builder.create().show()
+                    viewModel.warning.value = ValidateEnum.UNDEFINE
                 }
                 ValidateEnum.EMPTY_FIELDS -> {
                     builder.setMessage(getString(R.string.empty_fields))
                     builder.create().show()
+                    viewModel.warning.value = ValidateEnum.UNDEFINE
                 }
                 ValidateEnum.SAME_PHONES -> {
                     builder.setMessage(getString(R.string.same_number))
                     builder.create().show()
+                    viewModel.warning.value = ValidateEnum.UNDEFINE
+                }
+                ValidateEnum.UNDEFINE -> {
+
                 }
                 null -> {
 
