@@ -10,15 +10,15 @@
         android:id="@+id/contactName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:textSize="20sp" />
+        android:layout_marginTop="@dimen/twenty_dp"
+        android:layout_marginStart="@dimen/twenty_dp"
+        android:textSize="@dimen/twenty_sp" />
 
     <TextView
         android:id="@+id/contactPhone"
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="20dp"/>
+        android:layout_height="@dimen/twenty_dp"
+        android:layout_marginTop="@dimen/ten_dp"
+        android:layout_marginStart="@dimen/twenty_dp"/>
 
 </LinearLayout>
